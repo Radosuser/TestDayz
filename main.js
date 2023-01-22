@@ -131,8 +131,8 @@ const hbs = require('electron-handlebars')({
   version: app.getVersion()
 })
 
-// Keep a global reference of the window object, if you don't, the window will
-// be closed automatically when the JavaScript object is garbage collected.
+// Сохраняем глобальную ссылку на объект окна, иначе окно будет
+// закрываться автоматически, когда объект JavaScript очищается сборщиком мусора.
 let mainWindow
 
 function createWindow () {
