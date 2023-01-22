@@ -20,9 +20,9 @@ const host = {
 
 if (require('electron-squirrel-startup')) return;
 
-// this should be placed at top of main.js to handle setup events quickly
+// это должно быть размещено в верхней части main.js для быстрой обработки событий установки
 if (handleSquirrelEvent()) {
-  // squirrel event handled and app will exit in 1000ms, so don't do anything else
+// Событие белки обработано, и приложение закроется через 1000 мс, так что больше ничего не делайте
   return;
 }
 
