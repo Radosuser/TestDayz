@@ -155,7 +155,7 @@ function createWindow () {
 		let req = http.request({method: 'HEAD', host: host.domain, port: host.port, path: host.path}, (res) => {
 			if (res.headers["last-modified"] != settingsData["last-modified"] || settingsData.version == "-1") {
 				console.log("Mismatch: "+res.headers["last-modified"]+" != "+settingsData["last-modified"]);
-				//update settings with last modified
+				//давайте спросим у сервера, было ли обновление
 				settingsData["last-modified"] = res.headers["last-modified"]
 				
 				if (fs.existsSync(`${info.dayzpath}\\dayzrp`)) {
