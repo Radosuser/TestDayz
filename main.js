@@ -185,7 +185,7 @@ function createWindow () {
 					mainWindow.webContents.send("serverdown", {download: true})
 				})
 				/*
-				This is more useful for checking if shit's wrong with the cdn
+				Это более полезно для проверки того, что с cdn не так.
 				
 				let path = `${app.getPath("userData")}\\mods\\dayzrp.zip`;
 				console.log(path);
