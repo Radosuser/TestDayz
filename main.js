@@ -145,13 +145,13 @@ function createWindow () {
 	}))
 	
 	ipcMain.on("download", (event, info) => {
-		//save shit
+		// сохранить дерьмо
 		settingsData.dayzpath = info.dayzpath;
 		settingsData.charname = info.charname;
 		settings = JSON.stringify(settingsData);
 		fs.writeFile(spath, settings, (err) => {if (err) throw err})
 		
-		//let's ask the server if there's been an udpate
+		//давайте спросим у сервера, было ли обновление
 		let req = http.request({method: 'HEAD', host: host.domain, port: host.port, path: host.path}, (res) => {
 			if (res.headers["last-modified"] != settingsData["last-modified"] || settingsData.version == "-1") {
 				console.log("Mismatch: "+res.headers["last-modified"]+" != "+settingsData["last-modified"]);
