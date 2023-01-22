@@ -1,12 +1,12 @@
 /*
-* Host setup:
-* 
-* protocol: String 	- Either "https://" or "http://" (For the download server)
-* domain: 	String 	- Download server domain
-* port: 	Integer - Download server port
-* path: 	String 	- Path to the repository file (this will get extracted in game folder)
-* gameip: 	String 	- Game server's ip / domain
-* gameport: Integer - Game server's port
+* Настройка хоста:
+*
+* протокол: строка — либо «https://», либо «http://» (для сервера загрузки)
+* domain: String - Скачать домен сервера
+* port: Integer - Порт сервера загрузки
+* path: String — путь к файлу репозитория (он будет извлечен в папку с игрой)
+* gameip: String - ip/домен игрового сервера
+* gameport: Integer - порт игрового сервера
 *
 */
 const host = {
