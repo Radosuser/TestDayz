@@ -230,6 +230,7 @@ function createWindow () {
 				mainWindow.webContents.send("download complete", {version: settingsData.version, ip: host.gameip, port: host.gameport, join: info.join})
 			}
 		})
+		//Сервер отрублен
 		req.on('abort',(e) => {
 			dlServerUp = false
 			mainWindow.webContents.send("serverdown", {download: true})
