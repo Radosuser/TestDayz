@@ -79,9 +79,9 @@ function handleSquirrelEvent() {
       return true;
 
     case '--squirrel-obsolete':
-      // This is called on the outgoing version of your app before
-      // we update to the new version - it's the opposite of
-      // --squirrel-updated
+// Это вызывается в исходящей версии вашего приложения перед
+       // обновляемся до новой версии - это наоборот
+       // --squirrel-обновлено
 
       app.quit();
       return true;
