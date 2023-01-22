@@ -235,6 +235,7 @@ function createWindow () {
 			dlServerUp = false
 			mainWindow.webContents.send("serverdown", {download: true})
 		})
+		//Сервер отрублен
 		req.on('error', (e) => {
 			dlServerUp = false
 			mainWindow.webContents.send("serverdown", {download: true})
