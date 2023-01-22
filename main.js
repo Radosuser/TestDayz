@@ -69,10 +69,10 @@ function handleSquirrelEvent() {
       return true;
 
     case '--squirrel-uninstall':
-      // Undo anything you did in the --squirrel-install and
-      // --squirrel-updated handlers
+// Отмените все, что вы сделали в --squirrel-install и
+       // --squirrel-обновленные обработчики
 
-      // Remove desktop and start menu shortcuts
+       // Удалить ярлыки на рабочем столе и в меню "Пуск"
       spawnUpdate(['--removeShortcut', exeName]);
 
       setTimeout(app.quit, 1000);
