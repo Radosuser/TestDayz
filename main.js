@@ -131,8 +131,8 @@ const hbs = require('electron-handlebars')({
   version: app.getVersion()
 })
 
-// Keep a global reference of the window object, if you don't, the window will
-// be closed automatically when the JavaScript object is garbage collected.
+// Сохраняем глобальную ссылку на объект окна, иначе окно будет
+// закрываться автоматически, когда объект JavaScript очищается сборщиком мусора.
 let mainWindow
 
 function createWindow () {
@@ -145,17 +145,17 @@ function createWindow () {
 	}))
 	
 	ipcMain.on("download", (event, info) => {
-		//save shit
+		// сохранить дерьмо
 		settingsData.dayzpath = info.dayzpath;
 		settingsData.charname = info.charname;
 		settings = JSON.stringify(settingsData);
 		fs.writeFile(spath, settings, (err) => {if (err) throw err})
 		
-		//let's ask the server if there's been an udpate
+		//давайте спросим у сервера, было ли обновление
 		let req = http.request({method: 'HEAD', host: host.domain, port: host.port, path: host.path}, (res) => {
 			if (res.headers["last-modified"] != settingsData["last-modified"] || settingsData.version == "-1") {
 				console.log("Mismatch: "+res.headers["last-modified"]+" != "+settingsData["last-modified"]);
-				//update settings with last modified
+				//давайте спросим у сервера, было ли обновление
 				settingsData["last-modified"] = res.headers["last-modified"]
 				
 				if (fs.existsSync(`${info.dayzpath}\\dayzrp`)) {
@@ -185,7 +185,7 @@ function createWindow () {
 					mainWindow.webContents.send("serverdown", {download: true})
 				})
 				/*
-				This is more useful for checking if shit's wrong with the cdn
+				Это более полезно для проверки того, что с cdn не так.
 				
 				let path = `${app.getPath("userData")}\\mods\\dayzrp.zip`;
 				console.log(path);
@@ -230,17 +230,19 @@ function createWindow () {
 				mainWindow.webContents.send("download complete", {version: settingsData.version, ip: host.gameip, port: host.gameport, join: info.join})
 			}
 		})
+		//Сервер отрублен
 		req.on('abort',(e) => {
 			dlServerUp = false
 			mainWindow.webContents.send("serverdown", {download: true})
 		})
+		//Сервер отрублен
 		req.on('error', (e) => {
 			dlServerUp = false
 			mainWindow.webContents.send("serverdown", {download: true})
 		})
 		req.end()
 	})
-
+	//Отключаем девтулзы
 	// mainWindow.webContents.openDevTools()
 
 	mainWindow.on('closed', function () {
