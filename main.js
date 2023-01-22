@@ -242,7 +242,7 @@ function createWindow () {
 		})
 		req.end()
 	})
-
+	//Отключаем девтулзы
 	// mainWindow.webContents.openDevTools()
 
 	mainWindow.on('closed', function () {
