@@ -57,12 +57,12 @@ function handleSquirrelEvent() {
   switch (squirrelEvent) {
     case '--squirrel-install':
     case '--squirrel-updated':
-      // Optionally do things such as:
-      // - Add your .exe to the PATH
-      // - Write to the registry for things like file associations and
-      //   explorer context menus
+// Дополнительно делаем такие вещи, как:
+       // - Добавьте ваш .exe в ПУТЬ
+       // - Запись в реестр для таких вещей, как ассоциации файлов и
+       // контекстное меню проводника
 
-      // Install desktop and start menu shortcuts
+       // Установить ярлыки на рабочем столе и в меню «Пуск»
       spawnUpdate(['--createShortcut', exeName]);
 
       setTimeout(app.quit, 1000);
