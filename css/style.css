@@ -1,0 +1,79 @@
+.bg-red {
+	background: #700;
+}
+body {
+    background: #121212;
+    color: #fff;
+	padding-top: 50px;
+}
+.nbtn {
+	height: auto;
+	width: auto;
+	border: 0;
+	border-radius: 0;
+	-webkit-user-select: auto;
+	color: white;
+	font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+	font-weight: 300;
+	padding: .25rem 1rem;
+	cursor: pointer;
+}
+.nbtn:hover {
+	background: #560404;
+}
+.nav-drag {
+	-webkit-user-select: none !important;
+	-khtml-user-select: none !important;
+	-moz-user-select: none !important;
+	-ms-user-select: none !important;
+	-o-user-select: none !important;
+	user-select: none !important;
+	-webkit-app-region: drag !important;
+}
+.titlethang {
+	height: auto;
+	width: auto;
+	border: 0;
+	border-radius: 0;
+	-webkit-user-select: auto;
+	color: white;
+	font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+	font-weight: 300;
+	padding: .25rem 1rem;
+	cursor: pointer;
+}
+.form-control {
+	border-color: #c5c5c5 !important;
+}
+.form-control:focus {
+	box-shadow: 0 0 0 0.2rem rgba(119,0,0,.25);
+}
+label {
+	margin-top:.25rem;
+}
+#status {
+	text-align: left;
+}
+.btn-primary {
+    color: #fff;
+    background-color: #880000;
+    border-color: #660000;
+	cursor:pointer;
+	margin-bottom: 10px;
+}
+.btn-primary:hover,.btn-primary:not(:disabled):not(.disabled):active,.btn-primary:not(:disabled):not(.disabled):focus {
+    color: #eee;
+    background-color: #990000;
+    border-color: #660000;
+}
+.btn-primary:not(:disabled):not(.disabled):active:focus,.btn-primary:focus {
+	box-shadow: 0 0 0 0.2rem rgba(153,0,0,.5);
+}
+.card {
+	border-color: #ccc;
+	background: transparent;
+	padding: 15px;
+}
+.wrapcard {
+	padding-right: 0px;
+}

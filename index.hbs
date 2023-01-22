@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<title>{{title}}</title>
+		<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/style.css">
+	</head>
+    <body>
+		<nav class="container-fluid fixed-top navbar-inverse bg-red">
+			<div class="row">
+				<div class="col-10 btn titlethang text-left nav-drag"><span>{{title}} - {{version}}</span></div>
+				<div class="col-1 btn nbtn" id="minim">&boxh;</div>
+				<div class="col-1 btn nbtn" id="ext">X</div>
+			</div>
+		</nav>
+		<div class="container-fluid">
+		<div class="row">
+			<div class="col-8 wrapcard">
+				<div class="card card-outline-secondary">
+				  <div class="card-block">
+					<h4 class="card-title">Preferences</h4>
+					<form>
+						<div class="form-group">
+							<label for="dayzpath">Path to DayZ game folder</label>
+							<input type="text" class="form-control" id="dayzpath" value="{{data.dayzpath}}">
+							<label for="charname">Character name</label>
+							<input type="text" class="form-control" id="charname" value="{{data.charname}}">
+						</div>
+					</form>
+				  </div>
+				</div>
+			</div>
+			<div class="btns col-4 text-right">
+				<button type="button" class="btn btn-primary btn-block" id="join">Join server</button>
+				<button type="button" class="btn btn-primary btn-block" id="launch">Launch DayZ</button>
+				<button type="button" class="btn btn-primary btn-block" id="refresh">Refresh Status</button>
+				<button type="button" class="btn btn-primary btn-block">Mod Version: <span id="version">{{#if installed}}{{data.version}}{{else}}None{{/if}}</span></button>
+				<p id="status"></p>
+			</div>
+	</div>
+	<div class="row" style="display:none;" id="dlrow">
+		<div class="col-8" style="padding-top: 10px;">
+			<p id="dlstatus" style="margin: 0;">Downloading...</p>
+			<div class="progress" id="progressdiv">
+				<div class="progress-bar" role="progressbar" id="progress" style="width: 10%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+			</div>
+		</div>
+	</div>
+	</div><!--container-fluid-->
+
+	<script src="bootstrap/js/jquery.min.js"></script>
+	<!--<script src="bootstrap/js/tether.min.js"></script>-->
+	<script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+
+	</body>
+	<script>
+		require('./js/renderer.js')
+	</script>
+</html>
